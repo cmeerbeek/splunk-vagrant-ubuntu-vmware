@@ -7,10 +7,10 @@ To get this VM up and running make sure you've installed [Vagrant](https://www.v
 
 This setup is based on the [Bento Ubuntu 16.04 box](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04).
 
-Make sure you put the correct Splunk deb-file in the **sw** folder and change the Vagrantfile accordingly.
+Make sure you put the correct Splunk deb-file in the **sw** folder and change the SPLUNK_DEB constant in the Vagrantfile accordingly.
 
-Start the VM with: vagrant up --provider vmware_fusion.
-If you want to provision after setup run: vagrant reload --provision
+* Start the VM with: vagrant up --provider vmware_fusion.
+* If you want to provision after setup run: vagrant reload --provision
 
 ## ChangeLog
 
