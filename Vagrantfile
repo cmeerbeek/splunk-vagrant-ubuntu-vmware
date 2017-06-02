@@ -17,7 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.network "forwarded_port", guest: 8089, host: 8089
 
-  # Sync sw folder to /media/rpms
+  # Sync sw folder to /media/debs
   config.vm.synced_folder "sw/", "/media/debs"
 
   # Set VM mem and num VCPU settings
