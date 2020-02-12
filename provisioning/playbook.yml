@@ -1,0 +1,37 @@
+---
+- hosts: all
+  tasks:
+    - name: Install Splunk from deb-package
+      apt:
+        deb: /vagrant_data/splunk-8.0.1-6db836e2fb9e-linux-2.6-amd64.deb
+      become: yes
+
+    - name: Start Splunk for the first time
+      command: /opt/splunk/bin/splunk start --accept-license --answer-yes --no-prompt
+      become: yes
+      become_user: splunk
+
+    - name: Remove passwd from Splunk
+      command: mv /opt/splunk/etc/passwd /tmp/passwd
+      become: yes
+      become_user: splunk
+      ignore_errors: yes
+
+    - name: Copy user-seed.conf to Splunk
+      copy:
+        src: user-seed.conf
+        dest: /opt/splunk/etc/system/local/user-seed.conf
+        owner: splunk
+        group: splunk
+        mode: '0644'
+      become: yes
+      register: hello
+
+    - name: debug hello
+      debug: var=hello
+
+    - name: Restart Splunk
+      command: /opt/splunk/bin/splunk restart
+      become: yes
+      become_user: splunk
+...

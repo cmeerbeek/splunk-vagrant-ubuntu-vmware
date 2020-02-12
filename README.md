@@ -5,9 +5,9 @@ Vagrant setup for Splunk standalone machine using Ubuntu and VMWare provider.
 
 To get this VM up and running make sure you've installed [Vagrant](https://www.vagrantup.com/downloads.html) and the [VMWare provider](https://www.vagrantup.com/vmware/index.html).
 
-This setup is based on the [Bento Ubuntu 16.04 box](https://atlas.hashicorp.com/bento/boxes/ubuntu-16.04).
+This setup is based on the [generic Ubuntu 18.04 box](https://app.vagrantup.com/generic/boxes/ubuntu1804).
 
-Make sure you put the correct Splunk deb-file in the **sw** folder and change the SPLUNK_DEB constant in the Vagrantfile accordingly.
+Make sure you put the correct Splunk deb-file in the **data** folder and change the provisioning/playbook.yml to reflect the correct file.
 
 * Start the VM with: vagrant up --provider vmware_fusion.
 * If you want to provision after setup run: vagrant reload --provision
@@ -34,4 +34,4 @@ Nothing for now.
 
 ## Copyright
 
- Copyright (c) 2017 Coen Meerbeek. See [LICENSE](LICENSE) for details.
+ Copyright (c) 2020 Coen Meerbeek. See [LICENSE](LICENSE) for details.
